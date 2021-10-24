@@ -1,52 +1,70 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
-
+class State{
+    int[] X;
+    State(int[] _X){
+        X = new int[3];
+        for(int i=0;i<3;i++){
+            X[i] = _X[i];
+        }
+    }
+    State move(int from, int to, int[] Limit){
+        int[] nX = new int[]{X[0],X[1],X[2]};
+        if(X[from]+X[to]>Limit[to]){
+            nX[from] -= Limit[to] -X[to];
+            nX[to] = Limit[to];
+        }else{
+            nX[from] = 0;
+            nX[to] = X[to] + X[from];
+        }
+        return new State(nX);
+    }
+}
 public class Main {
     static FastReader sc = new FastReader();
     static StringBuilder sb = new StringBuilder();
-    static int T,M,N,cnt;
-    static int group_cnt;
-    static ArrayList<Integer> group;
 
-    static int[][] arr;
-    static int[][] dir = {{1,0},{0,1},{-1,0},{0,-1}};
-    static boolean[][] visit;
+    static int[] Limit;
+    static boolean[] possible;
+    static boolean[][][] visit;
+    
     static void input(){
-        T = sc.nextInt();
-        M = sc.nextInt();
-        N = sc.nextInt();
-        arr = new int[N][M];
-        for (int i=0;i<cnt;i++){
-            int x = sc.nextInt(),y = sc.nextInt();
-            arr[x][y] = 1;
+        Limit = new int[3];
+        for(int i=0; i<3; i++){
+            Limit[i] = sc.nextInt();
         }
-        visit = new boolean[N][M];
+        visit = new boolean[205][205][205];
+        possible = new boolean[205];
     }
-    static void dfs(int x, int y){
-        visit[x][y]=true;
-        group_cnt++;
-        for (int k=0; k<4;k++){
-            int nx = x+dir[k][0];
-            int ny = y+dir[k][1];
-            if(nx<0||ny<0||nx>=M||ny>=N)continue;
-            if(visit[x][y]) continue;
-            if(arr[nx][ny] == 0) continue;
-            dfs(nx,ny);
-        }
+    static void bfs(int x1, int x2, int x3){
+        Queue<State> Q = new LinkedList<>();
+        visit[x1][x2][x3] = true;
 
-    }
-    static void pro(){
-        group = new ArrayList<>();
-        for(int i=0;i<M;i++){
-            for(int j=0; j<N;j++){
-                if(visit[i][j])continue;
-                group_cnt =0;
-                dfs(i,j);
-                group.add(group_cnt);
+        Q.add(new State(new int[]{x1,x2,x3}));
+        while(!Q.isEmpty()){
+            State st = Q.poll();
+
+            if(st.X[0] ==0) possible[st.X[2]] = true;
+            for(int from=0; from<3; from++){
+                for(int to=0; to<3; to++){
+                    if(from == to) continue;
+                    State nxt = st.move(from,to,Limit);
+
+                    if(!visit[nxt.X[0]][nxt.X[1]][nxt.X[2]]){
+                        visit[nxt.X[0]][nxt.X[1]][nxt.X[2]] = true;
+                        Q.add(nxt);
+                    }
+                }
             }
         }
-        System.out.println(group.size());
+    }
+    static void pro(){
+        bfs(0,0,Limit[2]);
+        for(int i=0;i<=200;i++){
+            if(possible[i]) sb.append(i).append(' ');
+        }
+        System.out.println(sb);
     }
     public static void main(String[] args) {
         input();
