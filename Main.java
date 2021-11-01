@@ -1,31 +1,35 @@
 import java.util.Scanner;
 
-public class Main {
-    static StringBuilder sb = new StringBuilder();
-    static Scanner sc = new Scanner(System.in);
+public class Main{
     static int N,M;
+    static StringBuilder sb = new StringBuilder();
     static int[] selected;
-
+    static Scanner sc = new Scanner(System.in);
+    
     static void input(){
-        N = Integer.parseInt(sc.next());
-        M = Integer.parseInt(sc.next());
+        N = sc.nextInt();
+        M = sc.nextInt();
+        selected = new int[M];
     }
-
-    static void rec_func(int k){
-        if(k == M+1){
-            for(int i=0; i<=M;i++) sb.append(selected[i]).append(' ');
+    static void func(int k){
+        if(k == M){
+            for(int i=0;i<M;i++){
+                sb.append(selected[i]).append(' ');
+            }
             sb.append('\n');
         }else{
-            for(int cand = 1; cand<=N; cand++){
-                selected[k] = cand;
-                rec_func(k+1);
+            for(int i=1; i<=N;i++){
+                selected[k] = i;
+                func(k+1);
                 selected[k] = 0;
             }
         }
+
     }
     public static void main(String[] args) {
         input();
-        rec_func(1);
-        System.out.println(sb.toString());
+        func(0);
+        System.out.println(sb);
     }
+    
 }
