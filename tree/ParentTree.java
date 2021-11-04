@@ -22,7 +22,6 @@ public class ParentTree {
       int x = sc.nextInt(),y=sc.nextInt();
       adj[x].add(y);
       adj[y].add(x);
-ㄴㅁㄴㅁ
     }
   }
   static void dfs(int x, int par){

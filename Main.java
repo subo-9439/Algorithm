@@ -1,35 +1,20 @@
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main{
-    static int N,M;
+    static FastReader sc = new FastReader();
     static StringBuilder sb = new StringBuilder();
-    static int[] selected;
-    static Scanner sc = new Scanner(System.in);
-    
-    static void input(){
-        N = sc.nextInt();
-        M = sc.nextInt();
-        selected = new int[M];
-    }
-    static void func(int k){
-        if(k == M){
-            for(int i=0;i<M;i++){
-                sb.append(selected[i]).append(' ');
-            }
-            sb.append('\n');
-        }else{
-            for(int i=1; i<=N;i++){
-                selected[k] = i;
-                func(k+1);
-                selected[k] = 0;
-            }
-        }
 
+    static int n;
+    static ArrayList<Integer>[] adj;
+    static int[] parent;
+
+    static void input(){
+        n = sc.nextInt();
+        adj = new ArrayList[n+1];
+        parent = new int[n+1];
+        for(int i=1; i<=n; i++){
+            adj[i] = new ArrayList<>();
+        }
+        
     }
-    public static void main(String[] args) {
-        input();
-        func(0);
-        System.out.println(sb);
-    }
-    
 }
