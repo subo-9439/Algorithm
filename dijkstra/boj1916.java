@@ -70,9 +70,14 @@ public class boj1916 {
 
       //꺼낸 정보가 최신정보랑 다르면, 의미 없이 낡은 정보이기때문에 폐기한다.
       if(dist[info.idx] != info.dist) continue;
+
       //연결된 모든 간선들을 통해서 다른 정점들에 대한 정보를 갱신해준다.
-      
-      //e.to까지 갈 수 있는 더 짧은 거리를 찾았다면 이에 대한 정보를 갱신해주고 PQ에 기록해준다.
+      for(Edge e: edges[info.idx]){
+        if(dist[info.idx] + e.wegiht >= dist[e.to]) continue;
+        //e.to까지 갈 수 있는 더 짧은 거리를 찾았다면 이에 대한 정보를 갱신해주고 PQ에 기록해준다.
+        dist[e.to] = dist[info.idx] + e.weight;
+        pq.add(new Info(e.to, dist[e.to]));
+      }
 
     }
 
