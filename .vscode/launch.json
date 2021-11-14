@@ -1,0 +1,224 @@
+{
+  // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+  // 기존 특성에 대한 설명을 보려면 가리킵니다.
+  // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch Maze_2178",
+      "request": "launch",
+      "mainClass": "graph.Maze_2178",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Launch BFSSearch",
+      "request": "launch",
+      "mainClass": "BFSSearch",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch DFSSearch",
+      "request": "launch",
+      "mainClass": "DFSSearch",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch Main",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch binary_7795",
+      "request": "launch",
+      "mainClass": "binary.binary_7795",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch chopdown_2805",
+      "request": "launch",
+      "mainClass": "binary.chopdown_2805",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch NM_15649",
+      "request": "launch",
+      "mainClass": "bruteforce.NM_15649",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch NM_15650",
+      "request": "launch",
+      "mainClass": "bruteforce.NM_15650",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch NM_15651",
+      "request": "launch",
+      "mainClass": "bruteforce.NM_15651",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch NM_15652",
+      "request": "launch",
+      "mainClass": "bruteforce.NM_15652",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch NM_15663",
+      "request": "launch",
+      "mainClass": "bruteforce.NM_15663",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch NQueen_9663",
+      "request": "launch",
+      "mainClass": "bruteforce.NQueen_9663",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch Operator_14888",
+      "request": "launch",
+      "mainClass": "bruteforce.Operator_14888",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch subset_1182",
+      "request": "launch",
+      "mainClass": "bruteforce.subset_1182",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch boj1916",
+      "request": "launch",
+      "mainClass": "dijkstra.boj1916",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch Sum123_9095",
+      "request": "launch",
+      "mainClass": "dp.Sum123_9095",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch Tile_11726",
+      "request": "launch",
+      "mainClass": "dp.Tile_11726",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch Boj_2667",
+      "request": "launch",
+      "mainClass": "graph.Boj_2667",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch Bottle_2251",
+      "request": "launch",
+      "mainClass": "graph.Bottle_2251",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch DFS_BFS1260",
+      "request": "launch",
+      "mainClass": "graph.DFS_BFS1260",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch HideAndSeek",
+      "request": "launch",
+      "mainClass": "graph.HideAndSeek",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch Lab_14502",
+      "request": "launch",
+      "mainClass": "graph.Lab_14502",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch BubbleSort",
+      "request": "launch",
+      "mainClass": "sort.BubbleSort",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch Card_11652",
+      "request": "launch",
+      "mainClass": "sort.Card_11652",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch KEM_10825",
+      "request": "launch",
+      "mainClass": "sort.KEM_10825",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch sort_1015",
+      "request": "launch",
+      "mainClass": "sort.sort_1015",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch ParentTree",
+      "request": "launch",
+      "mainClass": "tree.ParentTree",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch TwoSolution_2470",
+      "request": "launch",
+      "mainClass": "twopointer.TwoSolution_2470",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch UniquNumbers_13144",
+      "request": "launch",
+      "mainClass": "twopointer.UniquNumbers_13144",
+      "projectName": "-Algorithm_c367f9c"
+    },
+    {
+      "type": "java",
+      "name": "Launch subplus_1806",
+      "request": "launch",
+      "mainClass": "twopointer.subplus_1806",
+      "projectName": "-Algorithm_c367f9c"
+    }
+  ]
+}
