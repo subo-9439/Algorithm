@@ -72,6 +72,6 @@ public class NQueen_9663 {
                 e.printStackTrace();
             }
             return str;
-        }
+        }s
     }
 }
