@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch Main",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "-Algorithm_b4738107"
+    },
+    {
+      "type": "java",
       "name": "Launch Maze_2178",
       "request": "launch",
       "mainClass": "graph.Maze_2178",

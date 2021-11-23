@@ -1,106 +1,30 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.StringTokenizer;
 
 public class Main{
     static FastReader sc = new FastReader();
     static StringBuilder sb = new StringBuilder();
-    static int N,M;
-    static String[] a;
-    static int[][] dir = {{1,0},{0,1},{-1,0},{0,-1}};
-    static int dist[][];
-    static boolean visit[][];
-    static ArrayList<Integer> group;
+    static int[] nums,operator;
+    static int N,max,min;
 
     static void input(){
         N = sc.nextInt();
-        M = sc.nextInt();
-        a = new String[N];
-        for(int i=0; i<N;i++){
-            a[i] = sc.nextLine();
-        }
-        visit = new boolean[N][M];
-        dist = new int[N][M];
+        nums = new int[N];
+        operator = new int[4];
+        for(int i=0; i<N; i++) nums[i] = sc.nextInt();
+        for(int i=0; i<4; i++) nums[i] = sc.nextInt();
     }
-    static void bfs(int x, int y){
-        //dist배열 초기화
-        for(int i=0;i < N; i++)
-            for(int j=0; j<M; j++)
-                dist[i][j] = -1;
-        
-        Queue<Integer> Q = new LinkedList<>();
-        Q.add(x);
-        Q.add(y);
-        dist[x][y] = 1;
-        visit[x][y] = true;
-
-        //BFS
-        while(!Q.isEmpty()){
-            x = Q.poll();
-            y = Q.poll();
-            for(int k=0; k<4; k++){
-                int nx = x + dir[k][0];
-                int ny = y + dir[k][1];
-                //넘어가는가
-                if(nx < 0 || ny <0 || nx>=N || ny>=M) continue;
-                //벽인가
-                if(a[nx].charAt(ny)== '0')continue;
-                //방문한적이 있는가
-                if(visit[nx][ny]) continue;
-                Q.add(nx);
-                Q.add(ny);
-                visit[nx][ny] = true;
-                dist[nx][ny] = dist[x][y] + 1;
+    static void calculator(int a,int[] operator,int b){
+        for(int i=0; i<4;i++){
+            //a + b 
+            if(operator[i]>0){
+                calculator(a, operator, b);
             }
         }
-    }
-    static void pro(){
-        //시작점이 (0,0)인 탐색 시작
-        bfs(0,0);
 
-        //(N-1, M-1)까지 필요한 최소 이동 횟수 출력
-        System.out.println(dist[N-1][M-1]);
+    }
+    static void rec_func(int k){
+        if()
     }
     public static void main(String[] args) {
-        input();
-        pro();
-    }
-
-    static class FastReader{
-        BufferedReader br;
-        StringTokenizer st;
-
-        public FastReader(){
-            br = new BufferedReader(new InputStreamReader(System.in));
-        }
-
-        String next(){
-            while(st == null || !st.hasMoreElements()){
-                try{
-                    st = new StringTokenizer(br.readLine());
-                }catch(IOException e){
-                    e.printStackTrace();
-                }
-            }
-            return st.nextToken();
-        }
-
-        int nextInt(){
-            return Integer.parseInt(next());
-        }
-        String nextLine(){
-            String str="";
-            try{
-                str = br.readLine();
-            }catch(IOException e){
-                e.printStackTrace();
-            }
-            
-            return str;
-        }
+        rec_func(0);
     }
 }
