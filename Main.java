@@ -1,30 +1,39 @@
+import java.util.Scanner;
 
 public class Main{
-    static FastReader sc = new FastReader();
+    static Scanner sc = new Scanner(System.in);
     static StringBuilder sb = new StringBuilder();
-    static int[] nums,operator;
-    static int N,max,min;
+    static int[] col;
+    static int ans;
+    static int N;
+    static boolean attackable(int r1,int c1, int r2, int c2){
+        if(c1 == c2) return true;
+        if(r1-c1 == r2 - c2) return true;
+        if(r1+c1 == r2 + c2) return true;
 
-    static void input(){
-        N = sc.nextInt();
-        nums = new int[N];
-        operator = new int[4];
-        for(int i=0; i<N; i++) nums[i] = sc.nextInt();
-        for(int i=0; i<4; i++) nums[i] = sc.nextInt();
+        return false;
     }
-    static void calculator(int a,int[] operator,int b){
-        for(int i=0; i<4;i++){
-            //a + b 
-            if(operator[i]>0){
-                calculator(a, operator, b);
+    static void rec_cur(int row){
+        if(row == N+1){
+            ans++;
+        }else{
+            for(int c=1; c<=N; c++){
+                for(int r = 1; r<N; r++){
+                    if(!attackable(row, c, r, col[r])){
+                        col[c] = c;
+                        rec_cur(row+1);
+                        col[c] = 0;
+                    }
+
+                }
+
             }
-        }
-
     }
-    static void rec_func(int k){
-        if()
-    }
+    
     public static void main(String[] args) {
-        rec_func(0);
+        N = sc.nextInt();
+        col = new int[N+1];
+        rec_cur(1);    
+        System.out.println(ans);
     }
 }
