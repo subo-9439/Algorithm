@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch WordSort_1181",
+      "request": "launch",
+      "mainClass": "sort.WordSort_1181",
+      "projectName": "-Algorithm_eee9b309"
+    },
+    {
+      "type": "java",
+      "name": "Launch KEM_10825",
+      "request": "launch",
+      "mainClass": "sort.KEM_10825",
+      "projectName": "-Algorithm_dda84c3"
+    },
+    {
+      "type": "java",
       "name": "Launch NQueen_9663",
       "request": "launch",
       "mainClass": "bruteforce.NQueen_9663",
