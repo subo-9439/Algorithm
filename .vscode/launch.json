@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch NQueen_9663",
+      "request": "launch",
+      "mainClass": "bruteforce.NQueen_9663",
+      "projectName": "-Algorithm_dda84c3"
+    },
+    {
+      "type": "java",
       "name": "Launch Main",
       "request": "launch",
       "mainClass": "Main",
