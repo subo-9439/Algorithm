@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch Card_11652",
+      "request": "launch",
+      "mainClass": "sort.Card_11652",
+      "projectName": "Algorithm_4fee8835"
+    },
+    {
+      "type": "java",
+      "name": "Launch Main",
+      "request": "launch",
+      "mainClass": "Main",
+      "projectName": "Algorithm_4fee8835"
+    },
+    {
+      "type": "java",
       "name": "Launch WordSort_1181",
       "request": "launch",
       "mainClass": "sort.WordSort_1181",
