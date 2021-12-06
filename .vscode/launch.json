@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch StairWay_2579",
+      "request": "launch",
+      "mainClass": "dp.StairWay_2579",
+      "projectName": "Algorithm_5f80b328"
+    },
+    {
+      "type": "java",
       "name": "Launch Card_11652",
       "request": "launch",
       "mainClass": "sort.Card_11652",
