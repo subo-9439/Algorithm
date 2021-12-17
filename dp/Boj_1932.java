@@ -1,9 +1,10 @@
+package dp;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main{
+public class Boj_1932 {
     static FastReader sc = new FastReader();
     static StringBuilder sb = new StringBuilder();
     static int n;
