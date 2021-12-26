@@ -20,7 +20,7 @@ public class Main{
             }
         }
     }
-    static void pro(){
+        static void pro(){
         //초기값
         dp[1][1] = arr[1][1];
 
