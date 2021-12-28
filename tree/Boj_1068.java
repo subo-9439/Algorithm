@@ -43,7 +43,7 @@ public class Boj_1068{
         }
     }
     static void pro(){
-        for(int i=0;i<n;i++){
+        for(int i=0;i<N;i++){
             if(child[i].contains(erased)){
                 child[i].remove(child[i].indexOf(erased));
             }
