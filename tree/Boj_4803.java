@@ -64,6 +64,7 @@ public class Boj_4803 {
             if(n == 0 && m == 0 )break;
             pro(tt);
         }
+        System.out.print(sb)
     }
     
     static class FastReader{
