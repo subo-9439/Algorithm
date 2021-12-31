@@ -1,10 +1,11 @@
+package bruteforce;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 //Boj_1759 암호 만들기
-public class Main{
+public class Boj_1759{
     static FastReader sc = new FastReader();
     static StringBuilder sb = new StringBuilder();
 

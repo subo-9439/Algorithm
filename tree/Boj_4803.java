@@ -49,7 +49,7 @@ public class Boj_4803 {
         }
 
         //정답 출력
-        sb.append("Case").append(tt).append(": ");
+        sb.append("Case ").append(tt).append(": ");
         if (ans == 0){
             sb.append("No trees.\n");
         } else if (ans == 1){
@@ -64,7 +64,7 @@ public class Boj_4803 {
             if(n == 0 && m == 0 )break;
             pro(tt);
         }
-        System.out.print(sb)
+        System.out.print(sb);
     }
     
     static class FastReader{
