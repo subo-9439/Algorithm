@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main {
+public class Boj_20291 {
     static FastReader scan = new FastReader();
     static StringBuilder sb = new StringBuilder();
 
