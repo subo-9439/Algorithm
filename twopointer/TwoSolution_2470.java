@@ -3,10 +3,10 @@ package twopointer;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+//Boj_2470
 public class TwoSolution_2470 {
     static FastReader sc = new FastReader();
     static StringBuilder sb = new StringBuilder();
