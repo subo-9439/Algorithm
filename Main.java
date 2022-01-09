@@ -6,42 +6,51 @@ import java.util.StringTokenizer;
 
 public class Main {
     static FastReader scan = new FastReader();
-    static StringBuilder sb = new StringBuilder();
+    static StringBuilder sb= new StringBuilder();
+    static int N, M;
+    static int[] arrA, arrB;
 
-    static int N;
-    static String[] a;
-
-    static void input (){
+    static void input() {
         N = scan.nextInt();
-        a = new String[N+1];
-        for (int i = 1; i <= N; i++){
-            a[i] = scan.nextLine().split("\\.")[1];
+        M = scan.nextInt();
+        arrA = new int[N+1];
+        arrB = new int[N+1];
+        for(int i=1; i<=N; i++){
+            arrA[i] = scan.nextInt();
+        }
+        for(int i=1; i<=M; i++){
+            arrB[i] = scan.nextInt();
         }
     }
-
-    static void pro(){
-        Arrays.sort(a, 1, N+1);
-        for (int i = 1; i <= N; ){
-            int cnt = 1, j = i + 1;
-            for( ; j <= N; j++){
-                if(a[j].compareTo(a[i]) == 0) cnt ++;
-                else break;
+    static int lower_bound(int[] B, int L, int R, int A){
+        int result = L-1;
+        while (L <= R){
+            int mid = (L+R) / 2;
+            if(B[mid] < A){
+                L = mid +1;
+                result = mid;
+            }else {
+                R = mid - 1;
             }
-
-            sb.append(a[i]).append(' ').append(cnt).append('\n');
-            i = j;
         }
-
-        System.out.println(sb);
+        return result;
     }
     public static void main(String[] args) {
-        input();
-        pro();
+        int T = scan.nextInt();
+        for (int t = 0; t < T; t++){
+            int cnt = 0;
+            input();
+            Arrays.sort(arrB,1,M);
+            for(int n = 1; n <= N; n++){
+                cnt += lower_bound(arrB, 1, M, arrA[n]);
+            }
+            System.out.println(cnt);
+
+        }
     }
     static class FastReader{
         BufferedReader br;
         StringTokenizer st;
-
         public FastReader(){
             br = new BufferedReader(new InputStreamReader(System.in));
         }
@@ -56,18 +65,16 @@ public class Main {
             }
             return st.nextToken();
         }
-
-        String nextLine(){
-            String str = "";
-            try{
-                str = br.readLine();
-            }catch(IOException e){
+        String nextLine() {
+            String st = "";
+            try {
+                st = br.readLine();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
-            return str;
+            return st;
         }
-
-        int nextInt(){
+        int nextInt() {
             return Integer.parseInt(next());
         }
     }
