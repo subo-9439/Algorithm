@@ -1,10 +1,11 @@
+package binarysearch;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main{
+public class Boj_1920{
     static FastReader scan = new FastReader();
     static StringBuilder sb = new StringBuilder();
 

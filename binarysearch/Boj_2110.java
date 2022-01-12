@@ -59,6 +59,7 @@ public class Boj_2110{
                 R = mid -1;
             }
         }
+        System.out.println(ans);
     }
     public static void main(String[] args) {
         input();
