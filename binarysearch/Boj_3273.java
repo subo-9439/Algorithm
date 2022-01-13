@@ -1,3 +1,5 @@
+package binarysearch;
+}
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,7 +15,8 @@ import java.util.StringTokenizer;
 
 // 출력
 // 문제의 조건을 만족하는 쌍의 개수를 출력한다.
-public class Main{
+public class Boj_3273 {
+    
     static FastReader scan = new FastReader();
     static StringBuilder sb = new StringBuilder();
     
