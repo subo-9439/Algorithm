@@ -27,7 +27,6 @@ public class Boj_1920{
 
     }
     static int lower_bound(int[] A, int L, int R, int X){
-        int result = L-1;
 
         while(L <= R){
             int mid = (L+R)/2;
