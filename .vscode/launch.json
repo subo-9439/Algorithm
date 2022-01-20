@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch Bottle_2251",
+      "request": "launch",
+      "mainClass": "graph.Bottle_2251",
+      "projectName": "Algorithm_5f80b328"
+    },
+    {
+      "type": "java",
       "name": "Launch binary_7795",
       "request": "launch",
       "mainClass": "binarysearch.binary_7795",
