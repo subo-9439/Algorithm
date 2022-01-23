@@ -5,8 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-import sort.sort_1015;
-
 public class Boj_11057 {
     static FastReader sc = new FastReader();
     static StringBuilder sb = new StringBuilder();
