@@ -2,9 +2,9 @@ package Hash;
 
 import java.util.HashMap;
 
-//프로그래머스 Hash1
+//프로그래머스 Hash Lv1
 //완주하지 못한 선수
-public class PGM_Hash1 {
+public class Pro_Hash1 {
     class Solution
 {
     public String solution(String[] participant, String[] completion)
