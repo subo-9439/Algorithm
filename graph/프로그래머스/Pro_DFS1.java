@@ -1,8 +1,8 @@
-package graph;
+package graph.프로그래머스;
 
 //프로그래머스 DFS/BFS Lv2
 //타켓넘버
-public class Pro_DFS {
+public class Pro_DFS1 {
   
   static int cnt = 0;
   // 정답제출시엔 수정

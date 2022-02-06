@@ -1,5 +1,13 @@
+package Queue.프로그래머스;
+
 import java.util.LinkedList;
 import java.util.Queue;
+
+//프로그래머스 Lv2
+//다리를 지나는 트럭
+//어렵네..
+
+public class pro_Queue3 {
 
 class Solution {
     public int solution(int bridge_length, int weight, int[] truck_weights) {
@@ -36,4 +44,5 @@ class Solution {
         }
         return time + bridge_length;
     }
+}
 }
