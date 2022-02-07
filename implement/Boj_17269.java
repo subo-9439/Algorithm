@@ -1,15 +1,16 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.StringTokenizer;
+package implement;
+  import java.io.BufferedReader;
+  import java.io.IOException;
+  import java.io.InputStreamReader;
+  import java.util.ArrayList;
+  import java.util.HashMap;
+  import java.util.Map;
+  import java.util.StringTokenizer;
+  
+//Boj 17269
+//이름 궁합 테스트
+public class Boj_17269{
 
-public class Main{
   static FastReader scan = new FastReader();
   static StringBuilder sb = new StringBuilder();
   static int N, M;
