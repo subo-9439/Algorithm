@@ -1,3 +1,4 @@
+package topology_sort;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -5,8 +6,9 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
-
-public class Main{
+// Boj 1005
+// ACM Craft 골드3 
+public class Boj_1005 {
   static FastReader scan = new FastReader();
   static StringBuilder sb = new StringBuilder();
   static int N, K, W;
@@ -92,4 +94,4 @@ public class Main{
       }
       return str;
     }
-  }
+}

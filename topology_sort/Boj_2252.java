@@ -8,7 +8,7 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
-public class Boj2252 {
+public class Boj_2252 {
   static FastReader scan = new FastReader();
   static StringBuilder sb = new StringBuilder();
 
