@@ -1,39 +1,19 @@
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.PriorityQueue;
 
 class Solution {
-    public int solution(int bridge_length, int weight, int[] truck_weights) {
-        Queue<Integer> queue = new LinkedList<>();
-        int sum = 0;
-        int time = 0;
+    public int solution(int[] scoville, int K) {
+        int answer = 0;
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
 
-        for(int i =0; i < truck_weights.length; i++){
-            int truck = truck_weights[i];
+        for(int n : scoville) pq.add(n);
 
-            while(true){
-
-                if(queue.isEmpty()){
-                    queue.add(truck);
-                    sum += truck;
-                    time++; 
-                    break;
-                }else if(queue.size() == bridge_length){
-                    sum -= queue.poll();
-                }else {
-
-                    if(sum + truck <= weight){
-                        queue.add(truck);
-                        sum += truck;
-                        time++;
-                        break;
-                    }else{
-                        queue.add(0);
-                        time++;
-                    }
-                }
-
-            }
+        int hot = 0 ;int cnt = 0;
+        while(pq.peek() < K){
+            if(pq.size() == 1) return -1;
+            hot = pq.poll() + pq.poll()*2;
+            pq.add(hot);
+            cnt++;
         }
-        return time + bridge_length;
+        return cnt;
     }
 }
