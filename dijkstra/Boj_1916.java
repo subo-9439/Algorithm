@@ -7,7 +7,9 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-public class Main{
+//다익스트라
+//최소비용구하기
+public class Boj_1916{
 
   static class Edge {
     public int to,weight;

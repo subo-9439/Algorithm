@@ -1,19 +1,23 @@
-import java.util.PriorityQueue;
-
 class Solution {
-    public int solution(int[] scoville, int K) {
+    public int solution(String name) {
         int answer = 0;
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        int length = name.length();
 
-        for(int n : scoville) pq.add(n);
-
-        int hot = 0 ;int cnt = 0;
-        while(pq.peek() < K){
-            if(pq.size() == 1) return -1;
-            hot = pq.poll() + pq.poll()*2;
-            pq.add(hot);
-            cnt++;
+        int cursor = 0;
+        boolean hasA = false;
+        for(int i = 0; i < name.length(); i++){
+            answer += Math.min(name.charAt(i)-'A', 'Z' - name.charAt(i) + 1);
+            if(name.charAt(i) != 'A' ) {
+                answer += cursor;
+                cursor = 0;
+            }
+            cursor++;
+            //A를 갖고 있는가
+            if(name.charAt(i) == 'A') hasA = true;
+            if(hasA && i == name.length()-1 && name.charAt(length-1) != 'A' ){
+                answer-=1;
+            }
         }
-        return cnt;
+        return answer;
     }
 }
