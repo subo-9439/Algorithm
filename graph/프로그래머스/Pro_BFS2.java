@@ -1,12 +1,13 @@
-import java.util.ArrayList;
+package graph.프로그래머스;
 import java.util.LinkedList;
 import java.util.Queue;
+public class Pro_BFS2 {
 
+  static boolean[] visited;
 class Solution {
     //1,1,0,
     //1,1,0,
     //0,0,1
-    static boolean[] visited;
     public int solution(int n, int[][] computers) {
         int answer=0;
         visited = new boolean[n];
@@ -33,4 +34,5 @@ class Solution {
             }
         }
     }
+}
 }
