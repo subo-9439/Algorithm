@@ -1,9 +1,13 @@
+package graph;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main{
+//백준 20165 
+//인내의 도미노 장인 호석
+public class Boj_20165 {
+
   static FastReader scan = new FastReader();
   static StringBuilder sb = new StringBuilder();
   static int N,M,R;
