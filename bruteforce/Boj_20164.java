@@ -1,13 +1,12 @@
+package bruteforce;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
-
 //Boj 20164 
-//홀수 홀릭호석
-
-public class Main{
+//홀수 홀릭 호석
+//모의고사1회
+public class Boj_20164{
   static FastReader scan = new FastReader();
   static StringBuilder sb = new StringBuilder();
   static int N;
@@ -88,3 +87,4 @@ public class Main{
     }
   }
 }
+
