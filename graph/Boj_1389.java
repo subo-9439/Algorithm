@@ -1,3 +1,4 @@
+package graph;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -6,7 +7,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main{
+//백준 1389 케빈 베이커의 6단계 법칙
+public class Boj_1389 {
+
   static FastReader scan = new FastReader();
   static int N,M;
   static ArrayList<Integer>[] adj;
