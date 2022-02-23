@@ -1,12 +1,15 @@
+package graph;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.StandardSocketOptions;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
-
-public class Main{
+//백준 5567
+//결혼식 Lv실버2
+public class Boj_5567 {
   static FastReader scan = new FastReader();
   static StringBuilder sb = new StringBuilder();
   static int N, M;
