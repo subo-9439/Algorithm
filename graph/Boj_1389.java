@@ -8,6 +8,8 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 //백준 1389 케빈 베이커의 6단계 법칙
+//Lv 실버1
+
 public class Boj_1389 {
 
   static FastReader scan = new FastReader();
