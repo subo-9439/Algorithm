@@ -1,4 +1,6 @@
 package 문자열;
+//2020 KAKAO BLIND RECRUITMENT
+//프로그래머스
 class Pro_문자열압축{
   public int solution(String s) {
       int answer = s.length();
