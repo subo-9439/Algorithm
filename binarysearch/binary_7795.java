@@ -1,4 +1,4 @@
-package binary;
+package binarysearch;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+//Boj_7795
 public class binary_7795 {
     static FastReader scan = new FastReader();
     static StringBuilder sb = new StringBuilder();

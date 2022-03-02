@@ -1,4 +1,4 @@
-package binary;
+package binarysearch;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -28,7 +28,7 @@ public class chopdown_2805 {
         return sum>= M;
     }
     static void pro(){
-        long L = 0, R = 2000000000, ans =0;
+        long L = 0, R = 1000000, ans =0;
         while(L<= R){
             int mid = (int)(L+R)/2;
             if(determinant(mid)){

@@ -10,7 +10,9 @@ class State{
     int[] X;
     State (int[] X){
         this.X = new int[3];
-        for(int i=0;i<3;i++) this.X[i] = X[i];
+        for(int i=0;i<3;i++) {
+            this.X[i] = X[i];
+        }
     }
 
     State move(int from, int to, int[] Limit){

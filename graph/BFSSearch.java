@@ -1,21 +1,23 @@
+package graph;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class DFSSearch {
-    public ArrayList<String> dfsFunc (HashMap<String,ArrayList<String>> graph, String startNode){
+public class BFSSearch {
+    public ArrayList<String> bfsFunc(HashMap<String, ArrayList<String>> graph, String startNode){
         ArrayList<String> visited = new ArrayList<>();
         ArrayList<String> needVisit = new ArrayList<>();
 
         needVisit.add(startNode);
+
         while(needVisit.size()>0){
-            String node = needVisit.remove(needVisit.size()-1);
+            String node = needVisit.remove(0);
+
             if(!visited.contains(node)){
-              visited.add(node);
-              needVisit.addAll(graph.get(node));
+                visited.add(node);
+                needVisit.addAll(graph.get(node));
             }
         }
-
         return visited;
     }
 
@@ -32,8 +34,10 @@ public class DFSSearch {
         graph.put("H", new ArrayList<String>(Arrays.asList("C")));
         graph.put("I", new ArrayList<String>(Arrays.asList("C", "J")));
         graph.put("J", new ArrayList<String>(Arrays.asList("I")));
-        DFSSearch dObj = new DFSSearch();
-        System.out.println(dObj.dfsFunc( graph, "A"));
+
+        BFSSearch bObj = new BFSSearch();
+        System.out.println(bObj.bfsFunc(graph,"A"));
+
 
     }
 }

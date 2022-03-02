@@ -6,6 +6,34 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch Lab_14502",
+      "request": "launch",
+      "mainClass": "graph.Lab_14502",
+      "projectName": "Algorithm_5f80b328"
+    },
+    {
+      "type": "java",
+      "name": "Launch Bottle_2251",
+      "request": "launch",
+      "mainClass": "graph.Bottle_2251",
+      "projectName": "Algorithm_5f80b328"
+    },
+    {
+      "type": "java",
+      "name": "Launch binary_7795",
+      "request": "launch",
+      "mainClass": "binarysearch.binary_7795",
+      "projectName": "Algorithm_5f80b328"
+    },
+    {
+      "type": "java",
+      "name": "Launch Boj_4803",
+      "request": "launch",
+      "mainClass": "tree.Boj_4803",
+      "projectName": "Algorithm_5f80b328"
+    },
+    {
+      "type": "java",
       "name": "Launch Main",
       "request": "launch",
       "mainClass": "Main",
