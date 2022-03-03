@@ -1,7 +1,10 @@
-class Solution {
-    static int[] res = { -1 };
-    static int[] lion;
-    static int max = -1000;
+package graph.프로그래머스;
+
+public class Pro_양궁대회 {
+  static int[] res = { -1 };
+  static int[] lion;
+  static int max = -1000;
+  class Solution {
     public void dfs(int[] info, int cnt, int n) {
         if(cnt == n+1) {
             int apeach_point = 0;
@@ -35,4 +38,5 @@ class Solution {
         dfs(info,1,n);
         return res;
     }
+}
 }

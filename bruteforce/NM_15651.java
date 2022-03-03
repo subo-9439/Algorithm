@@ -34,9 +34,6 @@ public class NM_15651 {
             for(int cand=1; cand<=N; cand++){
                 selected[k] = cand;
                 rec_func(k+1);
-                //selected[k] = 0;
-                //이부분 대체 왜 필요한지 몰겠음
-                //없어도 되잖아
                 selected[k] = 0;
             }
         }
