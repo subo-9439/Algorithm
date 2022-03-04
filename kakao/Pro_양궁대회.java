@@ -1,4 +1,4 @@
-package graph.프로그래머스;
+package kakao;
 
 public class Pro_양궁대회 {
   static int[] res = { -1 };
