@@ -17,7 +17,6 @@ class Solution {
         for(int i : moves){
             idx_list.add(i-1);
         }
-        int cnt =0;
         //[x][col] x값만 바꿔주기
         while(!idx_list.isEmpty()){
             int idx = idx_list.poll();

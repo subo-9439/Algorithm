@@ -1,4 +1,9 @@
-class Solution {
+package kakao;
+
+//프로그래머스 카카오
+//합승 택시 요금 
+public class Pro_합승택시요금 {
+  class Solution {
     public int solution(int n, int s, int a, int b, int[][] fares) {
         int INF = 200 * 100000 + 1; //최단거리가 될수 있는 최대값은 n * fares값 + 1;
         int answer = Integer.MAX_VALUE;
@@ -42,4 +47,5 @@ class Solution {
         return answer;
     }
 
+}
 }

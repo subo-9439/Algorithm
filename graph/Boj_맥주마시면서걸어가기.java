@@ -1,8 +1,11 @@
+package graph;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main {
+//Boj 9205 플로이드 와샬
+public class Boj_맥주마시면서걸어가기 {
+
     static int T, N, V;
     static int BIG = 101*23767*2;
     static int[][] input;
