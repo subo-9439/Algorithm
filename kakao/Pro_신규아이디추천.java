@@ -1,4 +1,7 @@
-class Solution {
+package kakao;
+
+public class Pro_신규아이디추천 {
+  class Solution {
     public String solution(String new_id) {
         String answer;
         // 1단계 new_id의 모든 대문자를 대응되는 소문자로 치환합니다.
@@ -69,3 +72,4 @@ class Solution {
 //         return answer = temp;
 //     }
 // }
+}
