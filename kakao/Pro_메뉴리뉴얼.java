@@ -1,14 +1,19 @@
+package kakao;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+public class Pro_메뉴리뉴얼 {
+
 class Solution {
     static char[] food;
     static Map<Integer,Map<String,Integer>> group;
     static Map<String,Integer> map;
     static StringBuilder sb = new StringBuilder();
+    
+
 
     public String[] solution(String[] orders, int[] course) {
         map = new HashMap<>();      //음식 , 해당음식개수  
@@ -70,4 +75,6 @@ class Solution {
             }
         }
     }
+}
+
 }
