@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch Solution",
+      "request": "launch",
+      "mainClass": "Solution",
+      "projectName": "Algorithm_5f80b328"
+    },
+    {
+      "type": "java",
       "name": "Launch FileInputStreamTest",
       "request": "launch",
       "mainClass": "FileInputStreamTest",

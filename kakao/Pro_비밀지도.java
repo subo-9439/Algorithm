@@ -1,4 +1,7 @@
-class Solution {
+package kakao;
+
+public class Pro_비밀지도 {
+  class Solution {
     public String[] solution(int n, int[] arr1, int[] arr2) {
         String[] answer = new String[n];
         StringBuilder sb = new StringBuilder();
@@ -25,4 +28,6 @@ class Solution {
 
         return answer;
     }
+}
+
 }

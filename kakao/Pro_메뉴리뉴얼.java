@@ -6,14 +6,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Pro_메뉴리뉴얼 {
-
-class Solution {
     static char[] food;
     static Map<Integer,Map<String,Integer>> group;
     static Map<String,Integer> map;
     static StringBuilder sb = new StringBuilder();
     
 
+class Solution {
 
     public String[] solution(String[] orders, int[] course) {
         map = new HashMap<>();      //음식 , 해당음식개수  
