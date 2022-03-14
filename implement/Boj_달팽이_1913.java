@@ -1,10 +1,10 @@
+package implement;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
-// 달팽이
-// 구현
-public class Main {
+public class Boj_달팽이_1913 {
+  // 달팽이
+  // 구현
 	static int startValue = 1;
 	static int[] moveX = {1, 0, -1, 0};	// 우하좌상
 	static int[] moveY = {0, 1, 0, -1};
@@ -13,7 +13,7 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.valueOf(br.readLine());
 		int k = Integer.valueOf(br.readLine());
-//		int[][] result = getSnail(0, 0, 1, n, k);
+  //		int[][] result = getSnail(0, 0, 1, n, k);
 		int[][] result = getSnail(n, k);
 		
 		StringBuilder sb = new StringBuilder();
@@ -73,4 +73,4 @@ public class Main {
 			
 			drawCount++;
 		}
-	}
+}
