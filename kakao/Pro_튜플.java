@@ -1,8 +1,9 @@
+package kakao;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-class Solution {
+class 튜플 {
     public int[] solution(String s) {
         int[] answer = {};
         int start = 1;
