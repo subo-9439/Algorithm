@@ -1,53 +1,48 @@
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.HashMap;
+import java.util.Map;
 
 class Solution {
-    public static int solution(String dartResult) {
-        int answer = 0;
-        Pattern p1 = Pattern.compile("([0-9]0?[S|D|T][*|#]?)");
-        Matcher matcher = p1.matcher(dartResult);
-
+    public ArrayList<Integer> solution(String msg) {
+        int[] answer = {};
         ArrayList<Integer> list = new ArrayList<>();
-        //3스테이지
-        int idx = 0;
-        while (matcher.find()) {
-//            System.out.println(matcher.group());
-            Pattern p2 = Pattern.compile("([0-9]0?)|([SDT])|([*#])");
-            Matcher matcher2 = p2.matcher(matcher.group());
-            int num = 0;
-            while (matcher2.find()) {
-//                System.out.println(matcher2.group());
-                if(matcher2.group().equals("S")) num = (int)Math.pow(num,1);
-                else if(matcher2.group().equals("D")) num = (int)Math.pow(num,2);
-                else if(matcher2.group().equals("T")) num = (int)Math.pow(num,3);
-                else if(matcher2.group().equals("*")){
-                    if(idx!=0){
-                        list.set(idx-1,list.get(idx-1)*2);
-                    }
-                    num = num*2;
-                }else if(matcher2.group().equals("#")){
-                    num = -num;
-                }else {
-                    num = Integer.parseInt(matcher2.group());
+        Map<String,Integer> map = new HashMap<>();
+
+        //색인 집어넣기 1~26
+
+        for(int i = 65; i <=90;i++){
+            String s =Character.toString(i);
+            map.put(s, i-64);
+        }
+        //
+        boolean zip = false;
+        int num = -1;
+        int i = 1;
+
+        // 마지막 인덱스 
+
+        for(int idx = 0; idx < msg.length();){
+            for(int inc = 1; inc <= msg.length()-idx; inc++){
+                //KA
+                String a = msg.substring(idx, idx+inc);
+                if(map.get(a) != null){
+                    num = map.get(a);
+                    if(idx+inc == msg.length()) zip = true;
+                }else{
+                    i = inc-1;
+                    // idx += inc;
+                    map.put(a,map.size()+1);
+                    break;
                 }
             }
-
             list.add(num);
-            idx++;
+            if(zip) break;
 
         }
-        for (int i : list){
-            answer+=i;
-            System.out.println("중간과정" + answer);
-            System.out.println(i);
+
+        for(i = 1; i <= msg.length(); i++){
+            
         }
-        return answer;
+        return list;
     }
-
-    public static void main(String[] args) {
-        System.out.println("정답은" + solution("1D2S#10S"));
-
-    }
-
 }

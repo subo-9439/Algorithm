@@ -1,26 +1,43 @@
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.*;
 
-public class Main{
-	public static void main(String[] args) {
-		String str1 = "나는 소년입니다";
-		String str2 = "I am a boy ㅎ";
-
-		Pattern p1 = Pattern.compile("[ㄱ-ㅎ|ㅏ-ㅣ|가-힣][a-z]");
-		Matcher m1 = p1.matcher(str2);
-
-		Pattern p2 = Pattern.compile("[ㄱ-ㅎㅏ-ㅣ가-힣]|[a-z]");
-		Matcher m2 = p2.matcher(str2);
-
-		while (m1.find()){
-			System.out.println(m1.group());
-		}
-		System.out.println("-------------------");
-		while (m2.find()){
-			System.out.println(m2.group());
-		}
-
-	}
+class Solution {
+    HashMap<String,Integer> hm = new HashMap<String,Integer>();
+    ArrayList<Integer> solution(String msg) {
 
 
+        ArrayList<Integer> answer = new ArrayList<>();
+
+        for(int i=1; i<=26; i++) {
+            String alphabet = Character.toString(i+64);
+            hm.put(alphabet,i);
+
+        }
+
+        char[] src = msg.toCharArray();
+        int head = 0;
+        int cnt = 26;
+        for(int tail = 1; tail<src.length+1; tail++) {
+            String str = msg.substring(head,tail);
+
+            if(!hm.containsKey(str)) {   // 없으면
+
+                cnt = cnt + 1;
+                hm.put(str,cnt);
+                int ans = hm.get(msg.substring(head,tail-1));
+                answer.add(ans);
+                head = tail-1;
+            }
+
+            if(tail == src.length) {
+                answer.add(hm.get(msg.substring(head, tail)));
+            }
+
+        }
+
+
+
+
+        return answer;
+
+    }
 }
