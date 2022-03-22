@@ -1,43 +1,59 @@
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
 
-class Solution {
-    HashMap<String,Integer> hm = new HashMap<String,Integer>();
-    ArrayList<Integer> solution(String msg) {
-
-
-        ArrayList<Integer> answer = new ArrayList<>();
-
-        for(int i=1; i<=26; i++) {
-            String alphabet = Character.toString(i+64);
-            hm.put(alphabet,i);
-
+public class Main{
+    static FastReader scan = new FastReader();
+    static StringBuilder sb = new StringBuilder();
+    static int N,M;
+    static int[] nums;
+    static int[] dp;
+    static ArrayList<Integer>[] list;
+    static void input(){
+        N = scan.nextInt();
+        nums = new int[N];
+        for(int i = 0; i < N ; i++) nums[i] = scan.nextInt();
+        M = scan.nextInt();
+    }
+    static void pro(){
+        dp = new int[N+1];
+        dp[0] = 0;
+        for(int i = 1; i <= N ; i++){
+            dp[i] = dp[i-1] + nums[i-1];
         }
-
-        char[] src = msg.toCharArray();
-        int head = 0;
-        int cnt = 26;
-        for(int tail = 1; tail<src.length+1; tail++) {
-            String str = msg.substring(head,tail);
-
-            if(!hm.containsKey(str)) {   // 없으면
-
-                cnt = cnt + 1;
-                hm.put(str,cnt);
-                int ans = hm.get(msg.substring(head,tail-1));
-                answer.add(ans);
-                head = tail-1;
-            }
-
-            if(tail == src.length) {
-                answer.add(hm.get(msg.substring(head, tail)));
-            }
-
+        for(int i= 0; i < M ; i++){
+            int start = scan.nextInt();
+            int end = scan.nextInt();
+            int res = dp[end] - dp[start-1];
+            sb.append(res).append("\n");
         }
+    }
+    public static void main(String[] args) {
+        input();
+        pro();
+        System.out.println(sb.toString());
+    }
 
-
-
-
-        return answer;
-
+    static class FastReader{
+        BufferedReader br;
+        StringTokenizer st;
+        public FastReader(){
+            br = new BufferedReader(new InputStreamReader(System.in));
+        }
+        String next(){
+            while(st == null || !st.hasMoreTokens()){
+                try{
+                    st = new StringTokenizer(br.readLine());
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
+            }
+            return st.nextToken();
+        }
+        int nextInt(){
+            return Integer.parseInt(next());
+        }
     }
 }
