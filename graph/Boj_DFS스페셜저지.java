@@ -1,11 +1,14 @@
+package graph;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.StringTokenizer;
-//DFS 스페셜 저지
-public class Main{
+//DFS 스페셜 저지 Boj 16964
+
+public class Boj_DFS스페셜저지{
 	static FastReader scan = new FastReader();
 	static int N, idx;
 	static ArrayList<Integer>[] list;

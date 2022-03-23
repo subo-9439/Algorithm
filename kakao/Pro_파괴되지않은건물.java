@@ -1,5 +1,6 @@
 package kakao;
 
+//누적합 알고리즘
 public class Pro_파괴되지않은건물 {
   public int solution(int[][] board, int[][] skill){
     int answer = 0;
