@@ -1,9 +1,11 @@
+package binarysearch;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main{
+//백준 6236 실버2
+public class Boj_용돈관리 {
 	static FastReader scan = new FastReader();
 	static int N,M;
 	static int[] arr;

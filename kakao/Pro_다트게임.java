@@ -5,8 +5,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Pro_다트게임 {
-
-    class Solution {
         public static int solution(String dartResult) {
             int answer = 0;
             Pattern p1 = Pattern.compile("([0-9]0?[S|D|T][*|#]?)");
@@ -55,4 +53,3 @@ public class Pro_다트게임 {
         }
 
     }
-}
