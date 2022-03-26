@@ -1,10 +1,12 @@
+package twopointer;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main{
-
+//백준 고냥이 16472 골드4
+//투포인터
+public class Boj_고냥이 {
 	static FastReader scan = new FastReader();
 	static StringBuilder sb = new StringBuilder();
 	static int N,kind;
