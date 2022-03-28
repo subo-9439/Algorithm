@@ -1,10 +1,11 @@
+package dp;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
-public class Main{
-	static FastReader scan = new FastReader();
+//Boj 11053번 LIS
+public class Boj_가장긴증가하는부분수열 {
+  static FastReader scan = new FastReader();
 	static int N, max;
 	static int[] arr;
 	static int[] dp;
