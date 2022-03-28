@@ -1,10 +1,11 @@
+package dp;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-
 //가장 큰 증가 부분 수열 백준_11055
-public class Main{
+public class Boj_가장큰증가부분수열 {
 	static FastReader scan = new FastReader();
 	static int N, max;
 	static int[] A;
