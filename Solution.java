@@ -1,32 +1,54 @@
+import java.util.*;
+
 class Solution {
-  public int solution(int n, int k) {
-      int answer = 0;
-      String str = "";
-      //진수 바꾸기
-      while(n>0){
-        str = (n%k) + str;
-        n /= k;
-      }
-      String[] nums = str.split("[0]+");
-      // for(int i = 0 ; i <nums.length; i++) System.out.println(i+"="+nums[i]);
+    public int[] solution(int[] fees, String[] records) {
+        Map<Integer, ArrayList<Integer>> map = new TreeMap<Integer, ArrayList<Integer>>();
 
-      for(String num : nums){
-        long a = Long.parseLong(num);
-        if(primeNumber(a)) answer++;
+        for(int i = 0 ; i < records.length; i++){
+            String[] rec = records[i].split(" ");
+            //0 시간 / 1 번호 / 2 IN.OUT
+            StringTokenizer st = new StringTokenizer(rec[0],":");
+            //시간을 분으로 계산
+            int time = Integer.parseInt(st.nextToken())*60 + Integer.parseInt(st.nextToken());
+            String IO = rec[2];
+            int carNum = Integer.parseInt(rec[1]);
+            //IN이라면  시간을 -로
+            if(IO.equals("IN")){
+                time = -time;
+            }
+            char a = 's';
+            int s = (int) a;
 
-      }
+            //만약 map에 carNum이 없다면 ArrayList 생성
+            // 있다면 list에 값추가
+            if(map.containsKey(carNum)){
+                map.get(carNum).add(time);
+            }else {
+                map.put(carNum,new ArrayList<>(Arrays.asList(time)));
+            }
+        }
 
-      return answer;
-  }
 
-  //소수 판별(에라토스테네스의 체)
-  static boolean primeNumber(long num){
-    if(num < 2) return false;
-    for(int i = 2; i<= Math.sqrt(num); i++){
-      if(num%i == 0){
-        return false;
-      }
+        int[] answer = new int[map.size()];
+        int idx=0;
+
+        //차량에 맞게
+        for(int carNum : map.keySet()){
+            int res = 0;
+            //만약 IN OUt이 짝수가 아니면 23: 59 넣어줘야함
+            if(map.get(carNum).size()%2 != 0) res = 23*60+59;
+
+            //차량에 입출차 합산
+            for(int i :map.get(carNum)){
+               res+=i;
+            }
+//            System.out.println(res);
+
+            //만약 기본시간을 못채운다면 기본요금만 지불
+            if(res < fees[0]) answer[idx++] = fees[1];
+            else
+                answer[idx++] = fees[1]+ (int)Math.ceil((res-fees[0]) /(double)fees[2]) * fees[3];
+        }
+        return answer;
     }
-    return true;
-  }
-} 
+}

@@ -3,39 +3,39 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-//가장 큰 증가 부분 수열 백준_11055
-public class Main{
+public class Main {
 	static FastReader scan = new FastReader();
-	static int N, max;
-	static int[] A;
-	static int[] dp;
-// 1, 100, 2, 50, 60, 3, 5, 6, 7, 8
+	static char[] str1,str2;
+	static Integer[][] dp;
 	static void input(){
-		N = scan.nextInt();
-		A = new int[N];
-		dp = new int[N];
-		for(int i = 0; i < N; i++){
-			A[i] = scan.nextInt();
-		}
-		dp[0] = A[0];
+		str1 = scan.nextLine().toCharArray();
+		str2 = scan.nextLine().toCharArray();
+		dp = new Integer[str1.length][str2.length];
 	}
-	static void pro(){
-		for(int i = 1; i < N ; i++){
-			dp[i] = A[i];
-			for(int j = 0; j < i; j++){
-				if(A[i] > A[j]){
-					dp[i] = Math.max(A[i]+dp[j],dp[i]);
-				}
+
+	static int LCS(int x, int y){
+		//인덱스 밖(공집합)일 경우 0 반환
+		if(x == -1 || y == -1) {
+			return 0;
+		}
+		// 만약 탐색하지 않은 인덱스라면?
+		if(dp[x][y] == null) {
+			dp[x][y] = 0;
+			// str1의 x번째 문자와 str2의 y번째 문자가 같은지 검사
+			if(str1[x] == str2[y]) {
+				dp[x][y] = LCS(x-1,y-1)+1;
+			}
+			//같지 않다면 LCS(dp)[x-1][y]와 LCS(dp)[x,y-1] 중 값으로 초기화
+			else{
+				dp[x][y] = Math.max(LCS(x-1,y),LCS(x,y-1));
 			}
 		}
-		for(int i = 0; i <N; i++){
-			max = Math.max(dp[i], max);
-		}
-		System.out.println(max);
+		return dp[x][y];
 	}
+
 	public static void main(String[] args) {
 		input();
-		pro();
+		System.out.println(LCS(str1.length-1,str2.length-1));
 	}
 	static class FastReader{
 		BufferedReader br;
@@ -44,10 +44,10 @@ public class Main{
 			br = new BufferedReader(new InputStreamReader(System.in));
 		}
 		String next(){
-			while(st==null||!st.hasMoreTokens()){
+			while (st==null || !st.hasMoreTokens()){
 				try{
 					st=new StringTokenizer(br.readLine());
-				}catch(IOException e){
+				}catch (IOException e){
 					e.printStackTrace();
 				}
 			}
@@ -55,6 +55,15 @@ public class Main{
 		}
 		int nextInt(){
 			return Integer.parseInt(next());
+		}
+		String nextLine(){
+			String str = "";
+			try{
+				str = br.readLine();
+			}catch (IOException e){
+				e.printStackTrace();
+			}
+			return str;
 		}
 	}
 }
