@@ -1,8 +1,14 @@
+package 날짜별.a220329;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
-class Solution {
+//프로그래머스 2021 Dev-matching: 웹 백엔드 개발자(상반기)
+// 달팽이문제
+// 2차원 배열 깊은 복사
+// System.arraycopy(복사할배열, 시작번호, 복사본을 담을 배열, 시작번호, 얼마큼 읽어올것인가)
+
+public class Pro_행렬테두리회전하기 {
     public int[] solution(int rows, int columns, int[][] queries) {
         int[] answer = new int[queries.length];
         int[][] map = new int[rows+1][columns+1];;
@@ -48,7 +54,7 @@ class Solution {
             for(int j = 0; j < map.length; j++){
                 System.arraycopy(temp[j],0,map[j],0,temp[0].length);
             }
-            answer[idx++]=Collections.min(list);
+            answer[idx++]= Collections.min(list);
         }
         return answer;
     }
