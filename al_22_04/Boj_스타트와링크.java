@@ -1,4 +1,4 @@
-package 날짜별.a220329;
+package al_22_04;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -58,7 +58,7 @@ public class Boj_스타트와링크 {
         //더이상 찾을 필요가없으므로 시스템을 종료한다
         if(val == 0){
             System.out.println(val);
-            System.exit(0);
+//            System.exit(0);
         }
         Min = Math.min(val,Min);
     }

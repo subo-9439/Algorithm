@@ -1,4 +1,4 @@
-package 날짜별.a220329;
+package al_22_03;
 
 import java.util.HashMap;
 import java.util.Map;
