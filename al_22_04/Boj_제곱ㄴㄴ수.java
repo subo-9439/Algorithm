@@ -1,9 +1,14 @@
+package al_22_04;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main{
+// 백준 1016
+// long타입 
+// 범위정할때 생각한번더하기
+public class Boj_제곱ㄴㄴ수 {
+
 	static FastReader scan = new FastReader();
 	static long min,max;
 	static int result,sqrt;
@@ -18,6 +23,10 @@ public class Main{
 		sqrt = ((int) Math.sqrt(max));
 		checks = new boolean[result];	//제곱ㄴㄴ수체크
 		num = new long[result];
+	}
+	public static void main(String[] args) {
+		input();
+		pro();
 	}
 	static void pro(){
 		//ex 1 , 10
