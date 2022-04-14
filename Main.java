@@ -1,46 +1,56 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-public class Main{
+public class Main {
 	static FastReader scan = new FastReader();
-	static long min,max;
-	static int result,sqrt;
-	static boolean[] checks;
-	static long[] num;
+	static int N,R,Q;
+	static ArrayList<Integer>[] list;
+	static int[] dp;
+	static ArrayList<Integer> queries;
+	static void input(){
+		N = scan.nextInt();
+		R = scan.nextInt();
+		Q = scan.nextInt();
+		//리스트 정보
+		list = new ArrayList[N+1];
+		dp = new int[N+1];
+		queries = new ArrayList<>();
 
-	static void input() {
-		min = scan.nextLong();
-		max = scan.nextLong();
-		//범위만큼 
-		result = (int) (max-min + 1);
-		sqrt = ((int) Math.sqrt(max));
-		checks = new boolean[result];	//제곱ㄴㄴ수체크
-		num = new long[result];
+		for(int i = 1; i <= N; i++) list[i] = new ArrayList<>();
+
+		for(int i = 0; i < N-1; i++){
+			int x = scan.nextInt();
+			int y = scan.nextInt();
+			list[x].add(y);
+			list[y].add(x);
+		}
+		for(int i = 0; i < Q; i++) queries.add(scan.nextInt());
+
 	}
 	static void pro(){
-		//ex 1 , 10
-		//sqrt 2~3
-		for(long i = 2; i <= sqrt; i++){
-			long square = i*i; // 4 9
+		dfs(R,-1);
 
-			//min % 4 ==0? 나누어떨어지면 그자체로 아닐땐 +1
-			//시작지점을 정해주기 위해
-			long start = min % square == 0 ? min/square : (min / square) + 1;
-			// 1~ 10
-			for(long j = start; j * square <= max; j++){
-				//몫 * (i*i) - min 을 가지는 boolean 배열원소를 true
-				checks[(int) ((j * square) - min)] = true;
-			}
-		}
-		//제곱 ㄴㄴ 수 counting
-		int count = 0;
-		for(int i = 0; i < result; i++) {
-			if(!checks[i]) count++;
-		}
-		System.out.println(count);
 	}
+	static void dfs(int x, int par){
+		dp[x] = 1;
+		for(int y : list[x]){
+			if(y == par) continue;
+			dfs(y,x);
+			dp[x] += dp[y];
+		}
+	}
+	public static void main(String[] args) {
+		input();
+		pro();
+		StringBuilder sb = new StringBuilder();
+		for(int i : queries)
+			sb.append(dp[i]).append('\n');
+		System.out.println(sb);
+	}
+
 	static class FastReader{
 		BufferedReader br;
 		StringTokenizer st;
@@ -49,10 +59,10 @@ public class Main{
 			br = new BufferedReader(new InputStreamReader(System.in));
 		}
 		String next(){
-			while(st==null || !st.hasMoreTokens()){
-				try{
+			while (st==null || !st.hasMoreTokens()){
+				try {
 					st = new StringTokenizer(br.readLine());
-				}catch(IOException e){
+				}catch (IOException e){
 					e.printStackTrace();
 				}
 			}
@@ -60,9 +70,6 @@ public class Main{
 		}
 		int nextInt(){
 			return Integer.parseInt(next());
-		}
-		long nextLong(){
-			return Long.parseLong(next());
 		}
 	}
 }
