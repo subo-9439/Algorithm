@@ -4,57 +4,54 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-public class Main {
+/*
+dp[N][0] => dp[N][0] or dp[N][1] => 자식노드의 수중 가장 큰수
+dp[N][1] => 자기자신과 + dp[N][0] or dp[N][1] 중 작은 수
+ */
+public class Main{
 	static FastReader scan = new FastReader();
-	static int N,R,Q;
-	static ArrayList<Integer>[] list;
-	static int[] dp;
-	static ArrayList<Integer> queries;
+	static int N;
+	static int[] towns;
+	static ArrayList<Integer>[] lists;
+	static int[][] dp;
 	static void input(){
 		N = scan.nextInt();
-		R = scan.nextInt();
-		Q = scan.nextInt();
-		//리스트 정보
-		list = new ArrayList[N+1];
-		dp = new int[N+1];
-		queries = new ArrayList<>();
+		towns = new int[N+1];
+		lists = new ArrayList[N+1];
 
-		for(int i = 1; i <= N; i++) list[i] = new ArrayList<>();
-
+		for(int i = 1; i<=N; i++){
+			towns[i] = scan.nextInt();
+		}
+		for(int i = 1; i <= N; i++) lists[i] = new ArrayList<>();
 		for(int i = 0; i < N-1; i++){
 			int x = scan.nextInt();
 			int y = scan.nextInt();
-			list[x].add(y);
-			list[y].add(x);
+			lists[x].add(y);
+			lists[y].add(x);
 		}
-		for(int i = 0; i < Q; i++) queries.add(scan.nextInt());
-
 	}
 	static void pro(){
-		dfs(R,-1);
-
+		dp = new int[N+1][2];
+		dfs(1,-1);
+		System.out.println(Math.max(dp[1][0],dp[1][1]));
 	}
 	static void dfs(int x, int par){
-		dp[x] = 1;
-		for(int y : list[x]){
-			if(y == par) continue;
+		dp[x][1] = towns[x];
+		for(int y: lists[x]){
+			if(y == par)continue;
 			dfs(y,x);
-			dp[x] += dp[y];
+			dp[x][0] += Math.max(dp[y][0],dp[y][1]);
+			dp[x][1] += dp[y][0];
 		}
+
 	}
 	public static void main(String[] args) {
 		input();
 		pro();
-		StringBuilder sb = new StringBuilder();
-		for(int i : queries)
-			sb.append(dp[i]).append('\n');
-		System.out.println(sb);
 	}
-
 	static class FastReader{
 		BufferedReader br;
 		StringTokenizer st;
-
 		public FastReader(){
 			br = new BufferedReader(new InputStreamReader(System.in));
 		}
