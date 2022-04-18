@@ -39,7 +39,7 @@ public class Main{
 			return st.nextToken();
 		}
 		int nextInt(){
-			return Integer.parseInt(next());asdfasfasdfㅁㄴㅇㄹ
+			return Integer.parseInt(next());asdfasfasdfㅁㄴㅇㄹㄴ
 		}
 	}
 }
