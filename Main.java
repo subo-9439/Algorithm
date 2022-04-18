@@ -5,33 +5,20 @@ import java.util.StringTokenizer;
 
 public class Main{
 	static FastReader scan = new FastReader();
-	static StringBuilder sb=  new StringBuilder();
-
-	static int T,  MOD = 1000000009;
-	static long[] dp;
-
-	static void input(){
-		T= scan.nextInt();
-		dp = new long[1000005];
-
-	}
-	static void pro(){
-		dp[1] = 1;
-		dp[2] = 2;
-		dp[3] = 4;
-		for(int i = 4; i <= 1000000; i++){
-			dp[i] = (dp[i-1]+dp[i-2]+dp[i-3]) % MOD ;
-		}
-		while (T-- > 0) {
-			int N = scan.nextInt();
-			sb.append(dp[N]).append('\n');
-		}
-		System.out.println(sb);
-	}
-
+	static int T;
+	static int[] arr;
 	public static void main(String[] args) {
-		input();
-		pro();
+		T = scan.nextInt();
+		arr = new int[10];
+		int t=0;
+		while (T-- >0) {
+			int sum = 0;
+
+			for(int i = 0; i < 10; i++){
+				arr[i] = scan.nextInt();
+				if (arr[i] % 2 != 0) sum += arr[i];
+			}
+		}
 	}
 	static class FastReader{
 		BufferedReader br;
@@ -40,8 +27,9 @@ public class Main{
 		public FastReader(){
 			br = new BufferedReader(new InputStreamReader(System.in));
 		}
+
 		String next(){
-			while (st==null||!st.hasMoreTokens()){
+			while (st==null || !st.hasMoreTokens()){
 				try {
 					st = new StringTokenizer(br.readLine());
 				}catch (IOException e){
