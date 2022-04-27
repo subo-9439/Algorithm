@@ -4,52 +4,54 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
-//이분탐색
-//백준 2559 수열 실버 3
-public class Boj_수열 {
+
+/*
+    투포인터문제 어렵게 생각하지말자
+    있는그대로 구현하면된다.
+*/
+public class Boj_귀여운라이언 {
     static FastReader scan = new FastReader();
     static int N,K;
+    static int MIN = -1;
     static int[] nums;
-    static int ans = Integer.MIN_VALUE;
-
     static void input(){
         N = scan.nextInt();
         K = scan.nextInt();
         nums = new int[N];
-        for(int i=0; i<N; i++){
+        for(int i = 0 ; i < N; i++){
             nums[i] = scan.nextInt();
         }
     }
-    //    static void pro(){
-//        //정답이 최악일때 음수가 될 수있다.
-//        for(int L = 0; L <= N-K; L++){
-//            int sum = 0;
-//            for (int R = L; R < L+K; R++) {
-//                sum += nums[R];
-//            }
-//            ans = Math.max(ans,sum);
-//        }
-//        System.out.println(ans);
-//    }
     static void pro(){
-        int R = 0, sum = 0;
-        for(int L = 0; L <= N-K; L++) {
-            while (R < L+K){
-                sum += nums[R++];
+        int R = 0, lion = 0;
+        for(int L = 0 ; L < N; L++){
+            while (R < N && lion < K){
+                //R이 1인가
+                if(nums[R] == 1) lion++;
+                R++;
             }
-            ans = Math.max(ans,sum);
-            sum -= nums[L];
+
+
+            if(lion == K){
+                if(MIN == -1) MIN = R-L;
+                MIN = Math.min(R-L,MIN);
+            }
+
+            if(nums[L] == 1) lion--;
+
         }
-        System.out.println(ans);
     }
     public static void main(String[] args) {
         input();
         pro();
+        System.out.println(MIN);
+
     }
     static class FastReader{
         BufferedReader br;
         StringTokenizer st;
-        public FastReader() {
+
+        public FastReader(){
             br = new BufferedReader(new InputStreamReader(System.in));
         }
         String next(){
@@ -61,8 +63,8 @@ public class Boj_수열 {
                 }
             }
             return st.nextToken();
-
         }
+
         int nextInt(){
             return Integer.parseInt(next());
         }
