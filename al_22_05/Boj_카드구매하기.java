@@ -6,6 +6,14 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 //11052
+/*
+dp[5] =
+4장을 사기위한 최대 값 + 1장 팩 값
+3장을 사기위한 최대 값 + 2장 팩 값
+2장을 사기위한 최대 값 + 3장 팩 값
+1장을 사기위한 최대 값 + 4장 팩 값
+중에 가장 큰 수가 들어가는 것이다.
+ */
 public class Boj_카드구매하기 {
     static FastReader scan = new FastReader();
     static int N;
