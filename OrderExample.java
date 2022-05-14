@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 class CafeCustomer {
     public String CafeCustomerName;
 
@@ -24,9 +26,11 @@ class CafeCustomerB extends CafeCustomer {
 
 //카페 사장님
 class CafeOwner {
-    public void giveItem(CafeCustomer cafeCustomer){
-        if(cafeCustomer instanceof CafeCustomer && cafeCustomer != null){
-            System.out.println(cafeCustomer.getOrder());
+    public void giveItem(Object cafeCustomer){
+        if(cafeCustomer instanceof  CafeCustomer){
+            System.out.println(((CafeCustomer) cafeCustomer).getOrder());
+        }else {
+            System.out.println("CafeCustomer가 아닌데여ㅛㅂ");
         }
     }
 //    public void giveItem(CafeCustomerB cafeCustomerB) {
@@ -44,7 +48,8 @@ public class OrderExample {
         CafeOwner cafeowner = new CafeOwner();
         CafeCustomerA a = new CafeCustomerA();
         CafeCustomerB b = new CafeCustomerB();
-
+        String str = new String();
+        cafeowner.giveItem(str);
         cafeowner.giveItem(a);
         cafeowner.giveItem(b);
     }
