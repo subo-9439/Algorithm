@@ -3,7 +3,7 @@ package al_22_05;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 //Boj 1058 실버 2 플로이드 와샬
@@ -11,7 +11,6 @@ public class Boj_친구 {
     static FastReader scan = new FastReader();
     static int N;
 
-    static ArrayList<Integer>[] list;
     static int[][] map;
     static int[][] ans;
 
