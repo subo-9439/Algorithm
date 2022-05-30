@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-
+//Boj 3190 골드 5
 //시뮬레이션 문젠데 고려하지 못한 요소가 너무 많았다.
 //뱀의 길이를 줄이는 로직에 대해서 다시한번 볼 필요가 있다.
 public class Boj_뱀 {
