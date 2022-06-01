@@ -7,7 +7,6 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 // 백준 15654 순열 응용
-//
 public class Boj_N과M_15654 {
     static FastReader scan = new FastReader();
     static StringBuilder sb = new StringBuilder();
