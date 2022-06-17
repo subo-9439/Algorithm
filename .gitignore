@@ -36,6 +36,6 @@ out/
 ### VS Code ###
 .vscode/
 
-### Main Solution ###
+### 제외 파일 ###
 Main.java
 Solution.java
