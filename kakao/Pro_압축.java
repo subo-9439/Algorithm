@@ -13,7 +13,7 @@ public class Pro_압축 {
           //색인 집어넣기 1~26
 
           for(int i = 65; i <=90;i++){
-              String s =Character.toString(i);
+              String s = Character.toString(i);
               map.put(s, i-64);
           }
           //

@@ -28,7 +28,7 @@ public class Boj_트리순회 {
         }
     }
     static void preOrder(int par){
-        sb.append(Character.toString(par+'A'));
+//        sb.append(Character.toString(par+'A'));
         for(Node node : list[par]){
             if(node.left!= -19){
                 preOrder(node.left);
@@ -39,7 +39,7 @@ public class Boj_트리순회 {
         }
     }
     static void inOrder(int par){
-//        sb.append(Character.toString(list[par].+'A'));
+        sb.append(Character.toString(par+'A'));
         for(Node node: list[par]){
             if(node.left != -19){
                 inOrder(node.left);

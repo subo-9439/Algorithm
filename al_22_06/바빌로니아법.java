@@ -33,7 +33,7 @@ public class 바빌로니아법 {
         public double sqrt(int num){
             double x = num/2;
 
-            for (int i = 0; i < 5; i++){
+            for (int i = 0; i < 100; i++){
                 x = (x + (num/x)) / 2;
             }
             return x;
