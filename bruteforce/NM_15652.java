@@ -22,6 +22,7 @@ public class NM_15652 {
              e.printStackTrace();
          }
      }
+
      static void rec_func(int k){
          if(k==M+1){
              for(int i=1;i<=M;i++)sb.append(selected[i]).append(' ');

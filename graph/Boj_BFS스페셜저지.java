@@ -9,31 +9,49 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 //Boj BFS 스페셜 저지 16940 골드 3
+
+/*
+queue와 set 이용하기(핵심)
+N = 4
+계층구조
+			1
+		2	  3
+	4
+
+*/
 public class Boj_BFS스페셜저지 {
   static FastReader scan = new FastReader();
+
 	static int N,idx;
+
 	static ArrayList<Integer>[] list;
 	static boolean flag;
 	static boolean[] visited;
 	static int[] ans;
 	static Queue<Integer> queue;
+
 	static void input(){
 		N = scan.nextInt();
 		list = new ArrayList[N+1];
 		visited = new boolean[N+1];
 		ans = new int[N];
+		
 		for(int i = 1; i<=N; i++) list[i] = new ArrayList<>();
 		idx = 1;
 		flag = true;
+
 		for(int i = 1; i<N; i++){
 			int x = scan.nextInt();
 			int y = scan.nextInt();
 			list[x].add(y);
 			list[y].add(x);
 		}
+
 		for(int i = 0; i<N; i++) ans[i] = scan.nextInt();
 	}
 	static void pro(){
+
+		//예외 조건
 		if(ans[0] != 1){
 			System.out.println(0);
 			return;
@@ -45,13 +63,19 @@ public class Boj_BFS스페셜저지 {
 		if(flag) System.out.println(1);
 		else System.out.println(0);
 	}
+
+
 	static void bfs(){
 		HashSet<Integer> set = new HashSet<>();
-		
+	
+		// 
+
 		while(!queue.isEmpty()){
+
 			int x = queue.poll();
 			visited[x] = true;
 			set.clear();
+
 			for(int y : list[x]){
 				if(visited[y]) continue;
 				set.add(y);
